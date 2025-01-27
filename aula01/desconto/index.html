@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cálculo de desconto</h1>
+    <input type="number" id="preco" placeholder="Preço">
+    <button onclick="reajustar()">Calcular desconto</button>
+    <p id="resultado"></p>
+</body>
+<script src="script.js">
+    function reajustar() {
+        let preco = Number(document.getElementById('preco').value);
+        let resultado = document.getElementById('resultado');
+        let desconto = 0;
+        if (preco > 1000)
+            desconto = preco * 8 / 100;
+        let precoComDesconto = Number(preco - desconto);
+        resultado.innerHTML = `Desconto de R$ ${desconto.toFixed(2)} <br>Preço final R$ ${precoComDesconto.toFixed(2)}`;
+    }
+</script>
+</html>
